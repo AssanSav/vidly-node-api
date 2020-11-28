@@ -1,6 +1,7 @@
 const Joi = require('joi-browser');
-// Joi.objectId = require("joi-objectid")(Joi)
 const mongoose = require('mongoose');
+
+
 
 const rentalSchema = new mongoose.Schema({
   customer: {
@@ -56,6 +57,7 @@ const rentalSchema = new mongoose.Schema({
   }
 })
 
+
 const Rental = mongoose.model("Rental", rentalSchema)
 
 const validateRental = (rental) => {
@@ -65,6 +67,7 @@ const validateRental = (rental) => {
   }
   return Joi.validate(rental, schema)
 }
+
 
 module.exports = {
   Rental,

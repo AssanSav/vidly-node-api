@@ -25,7 +25,9 @@ const customersSchema = new mongoose.Schema({
   }
 })
 
+
 const Customer = mongoose.model("Customer", customersSchema)
+
 
 const validateCustomer = (customer) => {
   const schema = {
@@ -35,6 +37,7 @@ const validateCustomer = (customer) => {
   }
   return Joi.validate(customer, schema)
 }
+
 
 module.exports = {
   Customer,
